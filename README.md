@@ -3,6 +3,7 @@
 ## What is the objective?
 The first main objective is write a code of validation. So I need to divide dataset and then write a code of train and valid in a one python file.
 And the second main objective is comparing different ML models. So make models file directory to organize models.
+And the third objective is build a structure of project. 
 
 ## CIFAR input shape
 input shape : (3 x 32 x 32)
@@ -14,3 +15,11 @@ output shape : (10, 1) --> 10 classes
 convolution 2D
 Maxpool 2D
 These two filter has same attribute that they has a square filter. But convolution 2D has so many parameters but Maxpool just pick max value in its square filter. And generally maxpool2D squeeze output shape radically more than Conv2D.
+
+## BatchNorm2d
+After normalization, y = r x x + b
+
+
+## Two model
+The first model is what we used before at MNIST. Just revise slightly to fit changed datasets CIFAR-10.
+And the second model is Resnet-18. Skip connection is important concept of it.
