@@ -41,7 +41,7 @@ And the second model is Resnet-18. Skip connection is important concept of it.
     self.fc1 = nn.Linear(64 * 8 * 8, 128)
     ```
 
-    Since I'm more familiar with theoretical concepts, I can quickly spot where things need to be fixed when it comes to matrices or linear transformations.
+    Since I'm more famil`iar with theoretical concepts, I can quickly spot where things need to be fixed when it comes to matrices or linear transformations.
 
 
     -Trying with hyperparameters.
@@ -62,3 +62,4 @@ Graph
 early stopping 
  save best model
 Understanding the code nad strucutre of Resnet-18
+프로젝트 파일들 구조 그려놓고 설명 하나하나 간단하게.

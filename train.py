@@ -10,7 +10,7 @@ def main():
     )
 
     model = MnistCNN()
-    train(model, train_loader, valid_loader, num_epochs=20)
+    train(model, train_loader, valid_loader, num_epochs=10)
 
 if __name__ == "__main__": # Execute itself when run this file directly.
     main()
