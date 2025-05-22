@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# PyTorch model weights
+*.pt
+*.pth
+
+# Data
+data/
+datasets/
+
+# VSCode
+.vscode/
+
+# Environment
+.env
+*.env

@@ -10,7 +10,7 @@ class MnistCNN(nn.Module):
         self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
         self.pool = nn.MaxPool2d(2, 2)  
         self.dropout = nn.Dropout(0.25) 
-        self.fc1 = nn.Linear(64 * 7 * 7, 128)
+        self.fc1 = nn.Linear(64 * 8 * 8, 128)
         self.fc2 = nn.Linear(128, 10)  
 
     def forward(self, x):
