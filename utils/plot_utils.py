@@ -1,14 +1,14 @@
 import matplotlib.pyplot as plt
 
-def plot_training(train_losses, val_accuracies, save_path="results/train_plot.png"):
-    epochs = range(1, len(train_losses)+1)
+def plot_training(train_accuracies, val_accuracies,model_name, save_path="results/train&valid_plot.png"):
+    epochs = range(1, len(train_accuracies)+1)
     
     plt.figure()
-    plt.plot(epochs, train_losses, label='Train Loss')
+    plt.plot(epochs, train_accuracies, label='Train Accuracy')
     plt.plot(epochs, val_accuracies, label='Validation Accuracy')
     plt.xlabel("Epoch")
     plt.ylabel("Value")
     plt.legend()
-    plt.title("Training Progress")
+    plt.title(f"Training Progress ({model_name})")
     plt.savefig(save_path)
     plt.close()

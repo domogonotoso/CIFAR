@@ -58,4 +58,4 @@ class ResNet(nn.Module):
         return self.fc(out)
 
 def ResNet18():
-    return ResNet(BasicBlock, [2, 2, 2, 2])  # ResNet-18 구조
+    return ResNet(BasicBlock, [2, 2, 2, 2]) 

@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
-from utils import plot_training
+from utils.plot_utils import plot_training
+import copy
 
 class EarlyStopping:
     def __init__(self, patience=5, min_delta=0.0):
@@ -43,12 +44,11 @@ def evaluate(model, data_loader, device='cuda' if torch.cuda.is_available() else
     return acc
 
 
-def train(model, train_loader, val_loader, num_epochs=10, lr=0.001, device='cuda' if torch.cuda.is_available() else 'cpu'):
+def train(model, train_loader, val_loader, num_epochs=20, lr=0.001, device='cuda' if torch.cuda.is_available() else 'cpu'):
     model.to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
-    train_losses = []
     train_accuracies = []
     val_accuracies = []
 
@@ -80,7 +80,6 @@ def train(model, train_loader, val_loader, num_epochs=10, lr=0.001, device='cuda
         train_acc = 100 * correct / total
         val_acc = evaluate(model, val_loader, device=device)
 
-        train_losses.append(avg_loss)
         train_accuracies.append(train_acc)
         val_accuracies.append(val_acc)
 
@@ -90,6 +89,7 @@ def train(model, train_loader, val_loader, num_epochs=10, lr=0.001, device='cuda
         if val_acc > best_val_acc:
             best_val_acc = val_acc
             best_model_state = model.state_dict()
+            best_model_state = copy.deepcopy(model.state_dict()) # Fix parameters of best model.
 
         # Early stopping
         if early_stopping.step(val_acc):
@@ -97,7 +97,7 @@ def train(model, train_loader, val_loader, num_epochs=10, lr=0.001, device='cuda
             break
 
     # save graph
-    plot_training(train_losses, train_accuracies, val_accuracies)
+    plot_training(train_accuracies, val_accuracies, model.__class__.__name__)
 
     #Save best moel
     if best_model_state:
@@ -105,5 +105,5 @@ def train(model, train_loader, val_loader, num_epochs=10, lr=0.001, device='cuda
         print(f"Best model saved to model_best.pth (Val Acc: {best_val_acc:.2f}%)")
 
     # Save last model
-    torch.save(model.state_dict(), "model.pth")
-    print("Last model saved to model.pth")
+    torch.save(model.state_dict(), "model_last.pth")
+    print(f"Last model saved to model.pth (Val Acc: {val_acc:.2f}%)")

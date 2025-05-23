@@ -52,14 +52,35 @@ And the second model is Resnet-18. Skip connection is important concept of it.
     Model seems to be underfitting. It need higher epochs.
     >>> No, I can see that after 10 epochs, train loss sustainly decreases but accuracy just stay around 70%. With 20 epochs, model seems to be overfitted. So just maintain 10 epochs and
 
-  
-
-
 
 ## What to do?
-test.py
-Graph
-early stopping 
- save best model
+Add train loss for checking overfitting --O
+test.py --O
+Graph --O
+early stopping --O 
+ save best model --O
 Understanding the code nad strucutre of Resnet-18
 프로젝트 파일들 구조 그려놓고 설명 하나하나 간단하게.
+
+
+## Training Progress MnistCNN
+
+![Training Accuracy vs Validation Accuracy](results/Mnist_t&v.png)
+
+> **Note:** Train accuracy starts lower than validation accuracy because it is measured before the model has learned anything, while validation is evaluated after the first epoch.
+
+
+Early stopping at epoch 14
+Best model saved to model_best.pth (Val Acc: 73.63%)
+Last model saved to model.pth (Val Acc: 72.56%)
+✅ Best model Test Accuracy: 72.44%
+✅ Last model Test Accuracy: 72.38%
+
+## Resnet18
+![Training Accuracy vs Validation Accuracy](results/ResNet_t&v.png)
+
+Early stopping at epoch 15
+Best model saved to model_best.pth (Val Acc: 82.83%)
+Last model saved to model.pth (Val Acc: 81.66%)
+✅ Best model Test Accuracy: 82.90%
+✅ Last model Test Accuracy: 81.99%
