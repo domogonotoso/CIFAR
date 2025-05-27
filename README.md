@@ -5,17 +5,21 @@ The first main objective is write a code of validation. So I need to divide data
 And the second main objective is comparing different ML models. So make models file directory to organize models.
 And the third objective is build a structure of project. 
 
-## The structure of CIFAR project.
+````markdown
+## 📁 The structure of CIFAR project
+
+```text
 CIFAR/
-├── data/              # stores actual dataset files (e.g., CIFAR-10)  
-├── models/            # CNN model definitions (MNIST, ResNet-18)  
-├── results/           # training result plots  
-├── utils/             # helper functions (data loading, plotting, etc.)  
-├── train.py           # training loop  
-├── test.py            # test script  
-├── requirements.txt  
-├── .gitignore  
-└── README.md   
+├── data/              # stores actual dataset files (e.g., CIFAR-10)
+├── models/            # CNN model definitions (MNIST, ResNet-18)
+├── results/           # training result plots
+├── utils/             # helper functions (data loading, plotting, etc.)
+├── train.py           # training loop
+├── test.py            # test script
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
  
 
 
