@@ -15,7 +15,7 @@ CIFAR/
 ├── test.py            # test script  
 ├── requirements.txt  
 ├── .gitignore  
-└── README.md  
+└── README.md   
  
 
 
