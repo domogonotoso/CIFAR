@@ -7,6 +7,7 @@ And the third objective is build a structure of project.
 
 ````markdown
 ## 📁 The structure of CIFAR project
+````
 
 ```text
 CIFAR/
