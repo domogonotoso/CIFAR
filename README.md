@@ -6,7 +6,16 @@ And the second main objective is comparing different ML models. So make models f
 And the third objective is build a structure of project. 
 
 ## The structure of CIFAR project.
-<pre><code>```text CIFAR/ ├── data/ # dataset files (e.g., CIFAR-10) ├── models/ # CNN models (MNIST, ResNet-18) ├── results/ # training plots ├── utils/ # helper functions ├── train.py # training script ├── test.py # evaluation script ├── requirements.txt ├── .gitignore └── README.md ``` </code></pre>
+CIFAR/
+├── data/              # stores actual dataset files (e.g., CIFAR-10)
+├── models/            # CNN model definitions (MNIST, ResNet-18)
+├── results/           # training result plots
+├── utils/             # helper functions (data loading, plotting, etc.)
+├── train.py           # training loop
+├── test.py            # test script
+├── requirements.txt
+├── .gitignore
+└── README.md
 
 
 
