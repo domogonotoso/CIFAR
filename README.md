@@ -5,6 +5,11 @@ The first main objective is write a code of validation. So I need to divide data
 And the second main objective is comparing different ML models. So make models file directory to organize models.
 And the third objective is build a structure of project. 
 
+## The structure of CIFAR project.
+<pre><code>CIFAR/ ├── data/ # Folder for storing actual dataset files (e.g., CIFAR-10) │ ├── models/ # CNN model definitions │ ├── MNIST.py # Simple CNN model for MNIST (used for baseline comparison) │ └── Resnet_18.py # ResNet-18 model adapted for CIFAR-10 │ ├── results/ # Plots and visual outputs from training │ ├── Mnist_t&v.png # Accuracy/loss curves for MNIST model │ └── ResNet_t&v.png # Accuracy/loss curves for ResNet-18 model │ ├── utils/ # Utility scripts │ ├── data_utils.py # Functions for loading and preprocessing CIFAR-10 data │ ├── plot_utils.py # Functions for visualizing training progress │ └── utils.py # Miscellaneous helper functions │ ├── train.py # Main training script (includes training and validation) ├── test.py # Evaluation script for testing model performance ├── requirements.txt # List of dependencies (e.g., torch, torchvision) ├── .gitignore # Specifies files/folders to be ignored by Git └── README.md # Project documentation </code></pre>
+
+
+
 ## CIFAR input shape
 input shape : (3 x 32 x 32)
 The number 3 means RGB color channel. 
