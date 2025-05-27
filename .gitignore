@@ -11,9 +11,9 @@ __pycache__/
 *.pt
 *.pth
 
-# Data
-data/
-datasets/
+# Data directory (ignore all files under data/)
+data/*
+
 
 # VSCode
 .vscode/
