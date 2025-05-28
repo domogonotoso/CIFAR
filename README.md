@@ -1,9 +1,11 @@
 # CIFAR-10 Image classification with Pytorch
 
 ## What is the objective?
-1. write a code of validation. So I need to divide dataset and then write a code of train and valid in a one python file.  
-2. compare different ML models. So make models file directory to organize models.  
-3. build a structure of project. 
+1. Implement validation logic by splitting the dataset into training and validation sets within a single Python file.
+
+2. Compare different machine learning models by organizing them into a dedicated models/ directory.
+
+3. Build a clear and modular project structure for maintainability and scalability.
 
 ````markdown
 📁 The structure of CIFAR project
@@ -11,12 +13,12 @@
 
 ```text
 CIFAR/
-├── data/              # stores actual dataset files (e.g., CIFAR-10)
-├── models/            # CNN model definitions (MNIST, ResNet-18)
-├── results/           # training result plots
-├── utils/             # helper functions (data loading, plotting, etc.)
-├── train.py           # training loop
-├── test.py            # test script
+├── data/              # Raw dataset files (e.g., CIFAR-10)
+├── models/            # CNN model definitions (MnistCNN, ResNet-18)
+├── results/           # Training and validation plots
+├── utils/             # Utility functions (data loading, plotting, etc.)
+├── train.py           # Training pipeline
+├── test.py            # Evaluation script
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -24,16 +26,21 @@ CIFAR/
  
 
 
-## CIFAR input and output shape
-input shape : (3 x 32 x 32)
-The number 3 means RGB color channel. 
+## Dataset Information
 
-output shape : (10, 1) --> 10 classes
+- **Input shape**: (3 × 32 × 32), RGB images
+- **Number of classes**: 10 (airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck)
 
-## CNN
-convolution 2D
-Maxpool 2D
-These two filter has same attribute that they has a square filter. But convolution 2D has so many parameters but Maxpool just pick max value in its square filter. And generally maxpool2D squeeze output shape radically more than Conv2D.
+
+## CNN Components
+
+Both **Conv2D** and **MaxPool2D** operations use square kernels by default (e.g., 3×3). However, their purposes and characteristics differ:
+
+- **Conv2D**: Applies learnable filters to extract features from the input. Each filter has weights that are updated during training, allowing the network to learn spatial patterns.
+- **MaxPool2D**: Performs downsampling by selecting the maximum value in each kernel region. It has no learnable parameters and is typically used to reduce spatial dimensions and computation.
+
+Note: MaxPooling usually reduces the feature map size more aggressively than convolution alone.
+
 
 ## BatchNorm2d
 After batch normalization, elements of batch are multiplied by r(gamma) and added by b(beta). They are parameters batch normarlization.
