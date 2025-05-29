@@ -86,21 +86,22 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (64x4096 and 3136x128)
 
     To fix this, I modified the fully connected layer in MNIST.py:
     from
-    ```code
+
     self.fc1 = nn.Linear(64 * 7 * 7, 128)
-    ```
+
     to
-    ```code
+
     self.fc1 = nn.Linear(64 * 8 * 8, 128)
-    ```
+
 
 Since I'm familiar with linear transformations and tensor shapes, I was able to quickly identify that the mismatch came from the input size change — CIFAR-10 uses 32×32 images instead of 28×28 like MNIST.
 
 
-Training with the adjusted model and testing various hyperparameters:
-[Epoch 10] Train Loss: 0.6118
-[Epoch 10] Validation Accuracy: 73.09%
-Model saved to model.pt
+Training with the adjusted model and testing various hyperparameters:  
+
+[Epoch 10] Train Loss: 0.6118  
+[Epoch 10] Validation Accuracy: 73.09%  
+Model saved to model.pt  
 
 At first, it seemed like the model was underfitting, so I considered increasing the number of epochs.
 However, after running it for 20 epochs, I observed signs of overfitting — validation accuracy plateaued while training loss continued to decrease.
